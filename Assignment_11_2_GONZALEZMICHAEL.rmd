@@ -1,0 +1,64 @@
+---
+title: "Create a Spell Checker"
+author: "Michael Gonzalez"
+date: "5/21/2019"
+output:
+  
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## A. Load the word frequency data into a dataset. The initial dataset should have two variables, the word and the number of occurrences of that word. Create a third variable for word probability that provides the overall probability of that word occurring in the dataset.
+
+```{r echo=TRUE}
+
+rawText <- read.table("en_full.txt", header=FALSE, sep=" ")
+colnames(rawText)[colnames(rawText)=="V1"] <- "word"
+colnames(rawText)[colnames(rawText)=="V2"] <- "occurs"
+word_prob <- rawText$occurs
+rawText$word_prob <- word_prob
+
+```
+
+
+## B. Create a function that when given an input word, returns a list of candidates that are within two edits from the input word. The returned candidates should be within the known word list. Use Norvig’s Python implementation, How to Write a Spelling Corrector, for reference. Demonstrate this function on colum, heirarchy, knowlege, and adres.
+
+```{r echo=TRUE}
+
+word_count <- table(rawText$word)
+sorted_words <- names(sort(word_count, decreasing = TRUE))
+
+correct <- function(word) {
+  edit_dist <- adist(word, sorted_words)
+  min_edit_dist <- min(edit_dist, 2)
+  proposals_by_prob <- c(sorted_words[ edit_dist <= min(edit_dist, 2)])
+  proposals_by_prob <- c(proposals_by_prob, word)
+  proposals_by_prob[1]
+}
+
+```
+
+
+## C. Create a function that provides the top three suggestions for each word. Demonstrate this function on colum, heirarchy, knowlege and adres.
+
+```{r echo=TRUE}
+
+word_count <- table(rawText$word)
+sorted_words <- names(sort(word_count, decreasing = TRUE))
+
+correct <- function(word) {
+  edit_dist <- adist(word, sorted_words)
+  min_edit_dist <- min(edit_dist, 2)
+  proposals_by_prob <- c(sorted_words[ edit_dist <= min(edit_dist, 2)])
+  proposals_by_prob <- c(proposals_by_prob, word)
+  c(proposals_by_prob[1], proposals_by_prob[2], proposals_by_prob[3])
+}
+
+```
+
+## D. List three ways you could improve this spelling corrector.
+
+I think that the spell checker is not as accurate as the one from peter norvig. It is pretty close to it. I think the use of word counting to be better with another method. I also think it could be better if we could include different ways of spelling of American and British English.
