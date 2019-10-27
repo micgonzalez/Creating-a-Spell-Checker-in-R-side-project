@@ -1,0 +1,2 @@
+# Creating-a-Spell-Checker-in-R-with-Bayes-theorem
+Spell checking and correction is a simple, yet powerful application of Bayes theorem. Given an input word, and proposed correction, we can calculate the probability of the correction being correct using Bayes theorem.  p(c|w) = P(c)P(w|c)/P(w)  In this problem, you will implement a spelling corrector based on Peter Norvig’s article, How to Write a Spelling Corrector (https://norvig.com/spell-correct.html) and using word frequency data. Using the R language and the read package to look through a text file with many words.
