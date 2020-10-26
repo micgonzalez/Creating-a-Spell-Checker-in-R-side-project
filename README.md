@@ -10,7 +10,7 @@ Spell checking and correction is a simple, yet powerful application of Bayes the
 You can try this code in R and Rstudio.
 
 # Findings
-I was taked to implement a spelling corrector based on Peter Norvig’s article, How to Write a Spelling Corrector and using the following word frequency data ().
+I was tasked to implement a spelling corrector based on Peter Norvig’s article, How to Write a Spelling Corrector and using the following word frequency data ().
 
 a. Load the word frequency data into a dataset. The initial dataset should have two variables, the word and the number of occurrences of that word. Create a third variable for word probability that provides the overall probability of that word occurring in the dataset.
 
