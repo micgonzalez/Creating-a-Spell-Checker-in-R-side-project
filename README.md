@@ -1,13 +1,28 @@
 # Creating a Spell Checker in R (side project)
 
+
+# Introduction
+This repository will display the use of the R programming language to check the spelling of text. This project was based on an interesting article from Peter Norvig. This article was interesting and I wanted to try for myself.
+
+
+
 # Abstract
 Spell checking and correction is a simple, yet powerful application of Bayes theorem. Given an input word, and proposed correction, we can calculate the probability of the correction being correct using Bayes theorem.  p(c|w) = P(c)P(w|c)/P(w)  In this problem, you will implement a spelling corrector based on Peter Norvig’s article, How to Write a Spelling Corrector (https://norvig.com/spell-correct.html) and using word frequency data. Using the R language and the read package to look through a text file with many words.
+
+
+
+# Summary of Skills
+This spell checking project was developed with the R programming language and in the Rstudio application.
+
+
 
 # Preview
 
 ![preview of spell checker code](https://github.com/micgonzalez/Creating-a-Spell-Checker-in-R-side-project/blob/master/spell_checker_in_r_code.png)
 
 You can try this code in R and Rstudio.
+
+
 
 # Findings
 I was tasked to implement a spelling corrector based on Peter Norvig’s article, How to Write a Spelling Corrector and using the following word frequency data ().
@@ -20,8 +35,12 @@ c. Create a function that provides the top three suggestions for each word. Demo
 
 d. List three ways you could improve this spelling corrector.
 
+
+
 # Challenges
 I had to overcome developing a function that provided the top three suggestions. At the beginning, it would suggest incorrect words and I had to find a way to fix this issue. I also made many attempts to improve this spell check, since it was hard to get it work correctly.
+
+
 
 # Conclusion
 This is was a great learning experience and I got to learn how a spell checker works. I also learn the limitations of the R programming language when I was working on this project.
